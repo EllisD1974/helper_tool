@@ -1,4 +1,3 @@
-from loguru import logger as log  # noqa: D100
 from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QTextEdit, QVBoxLayout, QWidget
 from .base_widget import BaseHelperWidget
 
