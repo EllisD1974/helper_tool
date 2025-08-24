@@ -1,8 +1,9 @@
 from loguru import logger as log  # noqa: D100
 from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QTextEdit, QVBoxLayout, QWidget
+from .base_widget import BaseHelperWidget
 
 
-class TextReplaceWidget(QWidget):  # noqa: D101
+class TextReplaceWidget(BaseHelperWidget):  # noqa: D101
     TITLE = "Text Replace"
     GROUP = "General"
 
@@ -52,7 +53,9 @@ class TextReplaceWidget(QWidget):  # noqa: D101
         self.replacement_text_input.textChanged.connect(self.update_output_text)
 
         # Set main layout
-        self.setLayout(layout)
+        self.layout.addLayout(layout)
+
+        self.update_status("Loaded")
 
     def update_output_text(self):  # noqa: D102
         # Get the input text and characters
@@ -80,4 +83,4 @@ class TextReplaceWidget(QWidget):  # noqa: D101
             clipboard = QApplication.clipboard()
             clipboard.setText(self.output_text_edit.toPlainText())
         except Exception as e:
-            log.log("PRINT", "Clipboard error:", e)
+            self.update_status(f"Clipboard error: {e}")
