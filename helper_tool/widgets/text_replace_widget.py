@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QTextEdit, QVBoxLayout, QWidget
-from .base_widget import BaseHelperWidget
+from helper_tool.base_widget import BaseHelperWidget
 
 
 class TextReplaceWidget(BaseHelperWidget):  # noqa: D101
@@ -53,8 +53,6 @@ class TextReplaceWidget(BaseHelperWidget):  # noqa: D101
 
         # Set main layout
         self.layout.addLayout(layout)
-
-        self.update_status("Loaded")
 
     def update_output_text(self):  # noqa: D102
         # Get the input text and characters
