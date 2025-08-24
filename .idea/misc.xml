@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="Black">
-    <option name="sdkName" value="road_features_qgis_wrapper" />
-  </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="road_features_qgis_wrapper" project-jdk-type="Python SDK" />
-</project>
