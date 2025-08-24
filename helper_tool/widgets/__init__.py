@@ -1,6 +1,6 @@
 # Init - add imports for specific widget classes here
 #   This allows other files to import directly from widgets
-from .text_replace_widget import TextReplaceWidget
+from helper_tool.widgets.text_replace_widget import TextReplaceWidget
 
 
 # Define explicitly included classes

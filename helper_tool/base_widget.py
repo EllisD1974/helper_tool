@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel
 
-from .logging_utils import get_logger
+from helper_tool.logging_utils import get_logger
 
 
 class BaseHelperWidget(QWidget):

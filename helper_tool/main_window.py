@@ -1,11 +1,15 @@
 import sys
 import importlib
 import inspect
+from pathlib import Path
+
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDockWidget, QListWidget, QListWidgetItem, QStyledItemDelegate
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QIcon, QColor
-import widgets
-from resources import resources_rc
+import helper_tool.widgets as widgets
+from helper_tool.plugin_loader import load_plugins
+from helper_tool.resources import resources_rc
+
 
 
 # def get_all_widget_classes(package):
@@ -50,7 +54,14 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, self.WIDTH, self.HEIGHT)
         self.setWindowIcon(QIcon(":/icons/icons/helper_tool_main_icon.png"))
 
+        # Load default widgets
         self.widgets = get_all_widget_classes(widgets)
+
+        # Load plugins - if any
+        # TODO(nloewenthal): Implement way of changing plugin path etc...
+        self.plugins = load_plugins(Path("test_plugins").resolve())
+        self.widgets.extend(self.plugins)
+
         self.widget_classes = {}
 
         # Set up the list widget for available tools on the left
