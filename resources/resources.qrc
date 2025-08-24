@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="icons">
+        <file>icons/helper_tool_main_icon.png</file>
+    </qresource>
+</RCC>
